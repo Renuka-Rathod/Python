@@ -1,0 +1,224 @@
+1. Given a string of odd length greater than 7, return a new string made of the middle three characters
+of a given String
+Given:
+str1 = "RakeshzipPetabb"
+Output
+zip
+str2 = "JazzbonAyxx"
+Output
+bon
+code:--
+def middle_three_chars(s):
+    mid_index = len(s) // 2
+    middle_chars = s[mid_index - 1:mid_index + 2]
+    return middle_chars
+str1 = "RakeshzipPetabb"
+str2 = "JazzbonAyxx"
+print(middle_three_chars(str1))  
+print(middle_three_chars(str2))  
+
+
+
+2. Given two strings, s1 and s2, create a new string by appending s2 in the middle of s1
+Given:
+s1 = "Ault"
+s2 = "Kelly"
+Expected Output:
+AuKellylt
+code:---
+s1 = "Ault"
+s2 = "Kelly"
+s3=len(s1)//2
+s3=s1[:s3] + s2 + s1[s3:]
+#print(s1[])
+print(s3)
+
+
+
+3. two strings, s1, and s2 return a new string made of the first, middle, and last characters each input
+string
+Given:
+s1 = "America"
+s2 = "Japan"
+Expected Output:
+AJrpan
+code:---
+s1 = "America"
+s2 = "Japan"
+#s3=len(s1)//2
+s3= s1[0]+s2[0]+s1[len(s1)//2]+s2[len(s2)//2]+ s1[-1]+s2[-1]
+print(s3)
+
+
+
+4. Given an input string with the combination of the lower and upper case arrange characters in such a
+way that all lowercase letters should come first.
+code:--
+#input_string = "AbCdEfGhIjKlMnOpQrStUvWxYz"
+input_string=str(input("Enter String:"))
+print("Given String is:-",input_string)
+lowercase_letters = [char for char in input_string if char.islower()]
+uppercase_letters = [char for char in input_string if char.isupper()]
+
+arranged_string = ''.join(lowercase_letters + uppercase_letters)
+
+print(arranged_string)
+
+
+
+5. create a third-string made of the first char of s1 then the last char of s2, Next, the second char of s1
+and second last char of s2, and so on. Any leftover chars go at the end of the result.
+Given:
+s1 = "Abc"
+s2 = "Xyz"
+Expected Output:
+AzbycX
+
+
+6. Find all occurrences of “USA” from right to left in a given string ignoring the case. also display the
+starting position
+Given:
+str1 = "Welcome to USA. usa awesome, isn't it?
+Expected answer : 16, 11
+CODE--
+str1 = "Welcome to USA. usa awesome, isn't it?"
+str1=str1.lower()
+s=0
+e= len(str1)
+for idx in range(len(str1)):
+    idx= str1.rfind("usa",s,e)
+    if idx == -1:
+        break
+    print(idx)
+    e=idx
+
+
+7. Find all overlapping occurrences of given substring in given string
+Ex.
+String = 0111
+Substring = 11
+Expected answer : 2
+String : ANANAAAANNN
+Substring: ANA
+Expected answer : 2
+String : ANANAAAANNN
+Substring: AA
+Expected answer : 3
+CODE--
+def find_overlapping_occurrences(string, substring):
+    return sum(1 for i in range(len(string) - len(substring) + 1) if string[i:i+len(substring)] == substring)
+
+string1 = "0111"
+substring1 = "11"
+print("string1 = '0111':-",find_overlapping_occurrences(string1, substring1))  
+
+string2 = "ANANAAAANNN"
+substring2 = "ANA"
+print("string2 = 'ANANAAAANNN':-",find_overlapping_occurrences(string2, substring2))  
+
+string3 = "ANANAAAANNN"
+substring3 = "AA"
+print("string3 = 'ANANAAAANNN':-",find_overlapping_occurrences(string3, substring3))  
+
+
+
+8. Given a string in format Emp_name:Emp_id
+If emp_is is perfect square -- > Print only vowels from emp_name
+Else if emp_id is prime -- > print alternate characters from emp_name
+Else if emp_id is odd -- > print sum of ascii values of characters in emp_name
+Else print None
+emp_name, emp_id = input("Enter Emp_name and Emp_id separated by ':' -> ").split(':')
+
+if int(emp_id) ** 0.5 % 1 == 0:  
+    vowels = 'aeiouAEIOU'
+    result = ''.join(c for c in emp_name if c in vowels)
+elif all(int(emp_id) % i != 0 for i in range(2, int(emp_id) // 2 + 1)):  
+    result = ''.join(emp_name[i] for i in range(len(emp_name)) if i % 2 == 0)
+elif int(emp_id) % 2 != 0:  
+    result = sum(ord(c) for c in emp_name)
+else:
+    result = None
+
+print(result)
+
+
+9. Find all mobile number mentioned in given paragraph of text
+Mobile number is always a 10 digit number no spaces no special characters
+Ex. Input= “this is a good number 9089786756 and 8900000000 is a desired number”
+Expected output: 9089786756 , 8900000000
+CODE--
+import re
+
+text = "this is a good number 9089786756 and 8900000000 is a desired number"
+mobile_numbers = re.findall(r'\b\d{10}\b', text)
+
+print(", ".join(mobile_numbers))
+
+
+
+10. Count occurrence of spaces, and special characters in given string
+Ex.
+Input: Fgh^f #89
+Expected output :
+Spaces: 1
+Special characters: 2
+
+CODE--
+text = "Fgh^f #89"
+space_count = text.count(" ")
+special_char_count = sum(not char.isalnum() and not char.isspace() for char in text)
+
+print("Spaces:", space_count)
+print("Special characters:", special_char_count)
+
+
+
+11. Given a paragraph count number of words, sentences. Every sentence ends with either . or ? or !
+Print Count of how many normal sentences ending with . , how many interrogative sentences ( ending
+with ?) and how many exclamatory sentences ( ending with !).
+Ex.
+Input : “I am at CDAC. What about you? I am surprised by current weather!”
+Normal sentence : 1
+Interrogative: 1
+Exclamatory : 1
+
+CODE--
+text = "I am at CDAC. What about you? I am surprised by current weather!"
+word_count = len(text.split())
+sentence_count = text.count(".") + text.count("?") + text.count("!")
+normal_sentences = text.count(".")
+interrogative_sentences = text.count("?")
+exclamatory_sentences = text.count("!")
+print("Word count:", word_count)
+print("Sentence count:", sentence_count)
+print("Normal sentence:", normal_sentences)
+print("Interrogative:", interrogative_sentences)
+print("Exclamatory:", exclamatory_sentences)
+
+12. You are given a string S and width w.
+Your task is to wrap the string into a paragraph of width w
+Example .
+String : “ABCDEFGHIJKLIMNOQRSTUVWXYZ”
+Width: 4
+Output:
+ABCD
+EFGH
+IJKL
+IMNO
+QRST
+UVWX
+YZ
+
+CODE--
+Method===1
+string = "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
+width = 4
+
+wrapped_text = '\n'.join(string[i:i+width] for i in range(0, len(string), width))
+print(wrapped_text)
+
+Method====2
+string= "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
+width = int(input("Enter width:"))
+for i in range(0,len(string),width):
+    print(string[i:width+i])

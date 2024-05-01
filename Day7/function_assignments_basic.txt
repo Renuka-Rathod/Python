@@ -1,0 +1,101 @@
+Q WA function to take a number as parameter and  print True if given number is even else print False
+CODE==
+num = int(input("Enter a number: "))
+if num % 2 == 0:
+    print("True")
+else:
+    print("False")
+
+
+Q WA function to take list as parameter and print all numbers of given list which are divisible by 11
+CODE==
+def divisible_by_11(list):
+    divisible_numbers = [num for num in list if num % 11 == 0]
+    for num in divisible_numbers:
+        print(num)
+my_list = [21, 33, 44, 51, 66, 77, 88, 99, 100, 121]
+divisible_by_11(my_list)
+
+Q WA function to take string as parameter
+Check if string is palindrome or not
+If palindrome return 1
+if not palindrome return 0
+
+CODE==
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()
+    return s == s[::-1]
+s = input("Enter a string: ")
+if is_palindrome(s):
+    print(1)
+else:
+    print(0)
+
+
+Q WA function to check if number is prime or not. Return True if number is prime and false if number not prime.
+CODE==
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+num = int(input("Enter a number: "))
+if is_prime(num):
+    print("True")
+else:
+    print("False")
+
+
+Q WA function to take a string as parameter. Print its alternate characters starting from 2nd character
+CODE==
+def print_alternate_chars(string):
+    alternate_chars = string[1::2]
+    print(alternate_chars)
+    
+input_string = input("Enter a string: ")
+print_alternate_chars(input_string)
+
+Q WA function to take dictionary as parameter. Print all keys of the dictionary
+code==
+def print_dict_keys(dictionary):
+    for key in dictionary.keys():
+        print(key)
+
+my_dict = {"apple": 1, "banana": 2, "orange": 3}
+print_dict_keys(my_dict)
+
+
+Q WA function to take a dictionary as parameter. Print value of key "name" if key "rollno" is having value 100.
+def print_name_for_roll_100(dictionary):
+    if "rollno" in dictionary and dictionary["rollno"] == 100:
+        print(dictionary.get("name", "Key 'name' not found or value is None"))
+        
+my_dict1 = {"rollno": 100, "name": "John"}
+print_name_for_roll_100(my_dict1)  # Output: John
+
+
+Q WA function to take list of strings as parameter and print all strings which have character 's' 2 times
+CODE==
+def print_strings_with_two_s(lst):
+    for string in lst:
+        if string.count('s') == 2:
+            print(string)
+my_list = ["apple", "banana", "grapes", "orange", "passionfruit", "strawberry", "passport","kiwi", "cassis"]
+print_strings_with_two_s(my_list)  # Output: passport, passionfruit
+
+Q WA function to take list of dictionaries. Print all dictionaries which contain key "id".
+CODE==
+def print_dicts_with_id(lst):
+    for d in lst:
+        if "id" in d:
+            print(d)
+my_list = [
+    {"name": "John", "id": 1},
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "id": 2, "age": 30},
+    {"name": "Charlie", "age": 35}
+]
+print_dicts_with_id(my_list)  # Output: {'name': 'John', 'id': 1}, {'name': 'Bob', 'id': 2, 'age': 30}

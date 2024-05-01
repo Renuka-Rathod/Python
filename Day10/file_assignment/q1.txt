@@ -1,0 +1,5 @@
+ Write a Python program to read an entire text file.
+open  a file and count frequency of every word in the file
+simple open and close(not recommended)
+
+

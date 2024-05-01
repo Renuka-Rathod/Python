@@ -1,0 +1,11 @@
+text = "I am at CDAC. What about you? I am surprised by current weather!"
+word_count = len(text.split())
+sentence_count = text.count(".") + text.count("?") + text.count("!")
+normal_sentences = text.count(".")
+interrogative_sentences = text.count("?")
+exclamatory_sentences = text.count("!")
+print("Word count:", word_count)
+print("Sentence count:", sentence_count)
+print("Normal sentence:", normal_sentences)
+print("Interrogative:", interrogative_sentences)
+print("Exclamatory:", exclamatory_sentences)

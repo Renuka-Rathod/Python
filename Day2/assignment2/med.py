@@ -5,7 +5,9 @@ medical_cause= input("Do you have a medical cause? (Y/N):")
 print(medical_cause)
 if medical_cause.upper()=='Y':
     print("allowed")
-elif medical_cause.upper()=='N':
-    print("not allowed.")
 else:
-    print("Invalid input.")
+
+   if medical_cause.upper()=='N':
+      print("not allowed.")
+    else:
+         print("Invalid input.")

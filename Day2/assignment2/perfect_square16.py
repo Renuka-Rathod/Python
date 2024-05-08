@@ -9,4 +9,5 @@ if num%i==0:
     print("perfect square")
 else:
     print("not perfect square.")
+    
 

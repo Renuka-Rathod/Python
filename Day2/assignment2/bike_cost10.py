@@ -1,5 +1,5 @@
-"""10. Write a program to accept the price of a bike and display the road tax and insurance to be paid 
-according to the following criteria . also display total amount to be paid.  
+"""10. Write a program to accept the price of a bike and display the road tax and insurance
+ to be paid according to the following criteria . also display total amount to be paid.  
       
         Cost price (in Rs)           Tax                Inssurance  
         > 100000                     15 %                   20%  

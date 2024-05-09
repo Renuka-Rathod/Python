@@ -15,5 +15,9 @@ users = [
 
 
 ]
-d=list(map(lambda users:users['name'],users))
+d=tuple(map(lambda users:users['age'],users))
 print(d)
+
+g=[(2,1),(3,2),(4,3),(7,4),(8,5)]
+z=sorted(g,key=lambda  x:x[1])
+print(z)

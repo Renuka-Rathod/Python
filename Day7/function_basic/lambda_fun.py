@@ -11,4 +11,7 @@ print(s('string'))
 
 #odd or even
 z = lambda e : 'even' if e%2==0 else 'odd'
-print(z(5))
+print(z(8))
+
+z=lambda a,b,c :a+b+c
+print(z(2,3,5))

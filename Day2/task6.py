@@ -14,7 +14,7 @@ print(a)
 print(b)
 
 # Loop to generate the next 8 terms of the Fibonacci series
-for _ in range(8):
+for i in range(8):
     c = a + b  # Calculate the next term
     print(c)   # Print the next term
     a = b      # Update the values for the next iteration

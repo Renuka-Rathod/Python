@@ -22,7 +22,7 @@
 
 #table of 23
 n=231
-print(list(range(23,n,23)))
+#print(list(range(23,n,23)))
 for num in range(23,n,23):
     print(num)
     
